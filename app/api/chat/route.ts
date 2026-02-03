@@ -5,6 +5,8 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
 
+    console.log(messages, "messages in route.ts");
+
     const systemPrompt = {
       role: "system",
       content: `You are an intelligent task management assistant integrated into a dashboard application. 

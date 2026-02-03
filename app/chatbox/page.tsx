@@ -33,7 +33,9 @@ export default function ChatPage() {
   const [isMinimized, setIsMinimized] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  console.log(messages, "messages....")
+
+  useEffect(() => {     
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
@@ -101,7 +103,7 @@ export default function ChatPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
       <div className="w-full max-w-sm h-[420px] bg-white rounded-xl shadow-xl border border-slate-200 flex flex-col overflow-hidden">
-
+    {JSON.stringify(messages)}
         {/* Header */}
         <div className="p-3 border-b flex items-center justify-between">
           <div className="flex items-center gap-2">
