@@ -26,19 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en"> 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > <ThemeProvider
+      > 
+      {/* <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
+          > */}
         
         {children}
-        <ChatButton />
-        </ThemeProvider>
+       
+        {/* </ThemeProvider> */}
         
       </body>
     </html>
