@@ -7,9 +7,16 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/sidebar"
+import { getCurrentUser } from "@/lib/auth"
+import { redirect } from "next/navigation"
 
-
-export default function Page() {
+export default async function Page() {
+  const user = await getCurrentUser()
+  
+  // Redirect to login if not authenticated
+  if (!user) {
+    redirect("/login")
+  }
   return (
     <>
       <SidebarProvider

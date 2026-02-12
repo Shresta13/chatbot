@@ -1,76 +1,105 @@
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          {/* Logo */}
-          <div className="col-span-2 md:col-span-1">
+    <footer className="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-200">
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          {/* Logo & Description */}
+          <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-base">T</span>
               </div>
-              <span className="font-bold text-lg">TaskMaster</span>
+              <span className="font-bold text-xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">TaskMaster</span>
+            </div>
+            <p className="text-gray-600 mb-6 leading-relaxed max-w-sm">
+              The ultimate productivity tool to help you manage tasks, collaborate with teams, and achieve your goals efficiently.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-green-600" />
+                <span>hello@taskmaster.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-green-600" />
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-green-600" />
+                <span>San Francisco, CA</span>
+              </div>
             </div>
           </div>
 
-          {/* About */}
+          {/* Product */}
           <div>
-            <h4 className="font-semibold mb-4">About</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-foreground">About us</Link></li>
-              <li><Link href="/" className="hover:text-foreground">Blog</Link></li>
-              <li><Link href="/" className="hover:text-foreground">Careers</Link></li>
+            <h4 className="font-bold mb-4 text-gray-900">Product</h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Features</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Pricing</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Integrations</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">API</Link></li>
             </ul>
           </div>
 
-          {/* Careers */}
+          {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Careers</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-foreground">Job openings</Link></li>
-              <li><Link href="/" className="hover:text-foreground">Benefits</Link></li>
+            <h4 className="font-bold mb-4 text-gray-900">Company</h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li><Link href="/" className="hover:text-green-600 transition-colors">About us</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Blog</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Careers</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Press Kit</Link></li>
             </ul>
           </div>
 
-          {/* Privacy */}
+          {/* Resources */}
           <div>
-            <h4 className="font-semibold mb-4">Privacy</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-foreground">Privacy policy</Link></li>
-              <li><Link href="/" className="hover:text-foreground">Terms of service</Link></li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-foreground">Help center</Link></li>
-              <li><Link href="/" className="hover:text-foreground">Contact us</Link></li>
+            <h4 className="font-bold mb-4 text-gray-900">Resources</h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Help Center</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Documentation</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Community</Link></li>
+              <li><Link href="/" className="hover:text-green-600 transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground mb-4 sm:mb-0">
+        {/* Newsletter */}
+        <div className="border-t border-b border-gray-300 py-8 mb-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-lg font-bold mb-2 text-gray-900">Stay updated</h3>
+            <p className="text-gray-600 mb-4 text-sm">Get the latest news and updates delivered to your inbox.</p>
+            <div className="flex gap-2 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+              />
+              <button className="px-6 py-2.5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 hover:scale-105 shadow-md">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-600">
             © 2026 TaskMaster. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            <Link href="/" className="text-muted-foreground hover:text-foreground">
-              <Facebook className="w-5 h-5" />
-            </Link>
-            <Link href="/" className="text-muted-foreground hover:text-foreground">
-              <Twitter className="w-5 h-5" />
-            </Link>
-            <Link href="/" className="text-muted-foreground hover:text-foreground">
-              <Instagram className="w-5 h-5" />
-            </Link>
-            <Link href="/" className="text-muted-foreground hover:text-foreground">
-              <Linkedin className="w-5 h-5" />
-            </Link>
+        
+
+          {/* Legal Links */}
+          <div className="flex gap-4 text-sm text-gray-600">
+            <Link href="/" className="hover:text-green-600 transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <Link href="/" className="hover:text-green-600 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

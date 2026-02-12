@@ -1,43 +1,77 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Play } from "lucide-react";
+import { Play, Sparkles, Stars } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative pt-20 pb-16 bg-gradient-to-b from-blue-50 to-white"
+        className="relative pt-20 pb-16 overflow-hidden"
       >
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <div className="inline-block mb-4 px-4 py-1.5 bg-blue-100 text-blue-600 text-xs font-semibold rounded-full">
-            ✨ NEW: AI-POWERED SUGGESTIONS IS HERE!  
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float delay-200" style={{animationDelay: '1s'}}></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float delay-400" style={{animationDelay: '2s'}}></div>
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 text-center">
+          {/* Badge with animation */}
+          <div className={`inline-block mb-6 transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+          }`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-xs font-semibold rounded-full border border-green-200 shadow-sm hover:shadow-md transition-shadow">
+              <Sparkles className="w-3.5 h-3.5 animate-pulse-slow" />
+              NEW: AI-POWERED SUGGESTIONS IS HERE!
+            </div>
           </div>
-          
-          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+
+          {/* Main Heading with staggered animation */}
+          <h1 className={`text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl transition-all duration-700 delay-100 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             Master your day,
             <br />
-            <span className="text-blue-600">one task at a time</span>
+            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              one task at a time
+            </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+          {/* Subheading */}
+          <p className={`mx-auto mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             The simple way to manage projects, track progress, and stay focused on what matters most. No clutter, just productivity.
           </p>
 
-          <div className="mt-10 flex justify-center gap-4">
+          {/* CTA Buttons */}
+          <div className={`mt-10 flex justify-center gap-4 flex-wrap transition-all duration-700 delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <Link
               href="/signup"
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-8 py-3.5 text-base font-semibold text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30"
+              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 px-8 py-4 text-base font-semibold text-white hover:from-green-700 hover:to-emerald-700 shadow-lg shadow-green-600/30 hover:shadow-xl hover:shadow-green-600/40 transition-all duration-300 hover:scale-105"
             >
               Get Started for Free
+              <Stars className="w-4 h-4 group-hover:rotate-12 transition-transform" />
             </Link>
 
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-8 py-3.5 text-base font-semibold text-gray-900 hover:bg-gray-50"
+              className="group inline-flex items-center gap-2 rounded-xl border-2 border-gray-300 bg-white/80 backdrop-blur-sm px-8 py-4 text-base font-semibold text-gray-900 hover:bg-white hover:border-green-600 hover:text-green-600 transition-all duration-300 hover:scale-105"
             >
-              <Play className="w-4 h-4" />
+              <Play className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               See how it works
             </Link>
           </div>
@@ -45,21 +79,20 @@ export default function Hero() {
       </section>
 
       {/* Dashboard Preview Image - Below Hero */}
-      <section className="bg-white pb-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="relative w-full flex justify-center">
-            <Image
-              src="/ddd.png"
-              alt="Dashboard Preview"
-              width={1309}
-              height={507}
-              className="rounded-2xl shadow-2xl border border-gray-200 w-full h-auto"
-              priority
-              unoptimized
-            />
-          </div>
+      <section className="pb-20 mt-16">
+        <div className="relative w-full max-w-4xl px-6 mx-auto flex justify-center">
+          <Image
+            src="/ddd.png"
+            alt="Dashboard Preview"
+            width={8000}
+            height={500}
+            className="block shadow-2xl rounded-2xl border border-gray-200 max-w-full h-auto"
+            priority
+            unoptimized
+          />
         </div>
       </section>
+
 
     </>
   );

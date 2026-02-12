@@ -102,8 +102,7 @@ export default function ChatPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
-      <div className="w-full max-w-sm h-[420px] bg-white rounded-xl shadow-xl border border-slate-200 flex flex-col overflow-hidden">
-    {JSON.stringify(messages)}
+      <div className="w-full max-w-sm h-105 bg-white rounded-xl shadow-xl border border-slate-200 flex flex-col overflow-hidden">
         {/* Header */}
         <div className="p-3 border-b flex items-center justify-between">
           <div className="flex items-center gap-2">

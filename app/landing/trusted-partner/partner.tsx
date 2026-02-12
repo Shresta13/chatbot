@@ -1,19 +1,27 @@
-export default function Partner() {
-  return (
-    <section className="py-16 bg-gray-50 border-y border-gray-100">
-      <div className="mx-auto max-w-7xl px-6">
-        <p className="text-center text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-8">
-          Trusted by over 10,000+ teams across the globe
-        </p>
+"use client";
 
-        <div className="flex flex-wrap items-center justify-center gap-12 opacity-50 grayscale">
-          <div className="h-8 w-24 bg-gray-300 rounded"></div>
-          <div className="h-8 w-32 bg-gray-300 rounded"></div>
-          <div className="h-8 w-28 bg-gray-300 rounded"></div>
-          <div className="h-8 w-36 bg-gray-300 rounded"></div>
-          <div className="h-8 w-24 bg-gray-300 rounded"></div>
+import Marquee from "react-fast-marquee";
+import Image from "next/image";
+
+export default function Partners() {
+  return (
+    <div className="py-8 bg-gray-50">
+      <Marquee
+        speed={50}
+        gradient={false}
+        pauseOnHover={true}
+      >
+        <div className="flex items-center gap-16 mx-8">
+          <Image src="/logo1.jpg" alt="logo1" width={120} height={60} />
+          <Image src="/logo2.jpg" alt="logo2" width={120} height={60} />
+          <Image src="/logo3.jpg" alt="logo3" width={120} height={60} />
+          <Image src="/logo1.jpg"  alt="logo4" width={120} height={60} />
+          <Image src="/logo3.jpg" alt="logo3" width={120} height={60} />
+          <Image src="/logo1.jpg"  alt="logo4" width={120} height={60} />
+          <Image src="/logo2.jpg" alt="logo5" width={120} height={60} />
+          <Image src="/logo2.jpg" alt="logo5" width={120} height={60} />
         </div>
-      </div>
-    </section>
+      </Marquee>
+    </div>
   );
 }

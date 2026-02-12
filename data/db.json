@@ -27,6 +27,13 @@
       "email": "maharjan@gmail.com",
       "password": "$2b$10$2i4zTQAaXgPX/0HGZCcZK.DX/UsAbfGHM5W9tbmJVeaIL/xu4wJEe",
       "createdAt": "2026-02-05T09:36:58.188Z"
+    },
+    {
+      "id": "aq0RUTz-ROqfqnQPLBaWa",
+      "name": "ram hari",
+      "email": "ram@gmail.com",
+      "password": "$2b$10$ka9ORman.54m7ktDs6Yt/OUrIdtTWoQrIe6eqgVUXCim.YSW3jOBC",
+      "createdAt": "2026-02-08T08:15:51.671Z"
     }
   ]
 }
