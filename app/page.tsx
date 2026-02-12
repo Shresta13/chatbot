@@ -10,6 +10,7 @@ import Partners from './landing/trusted-partner/partner';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* test changres */}
       <Navbar />
       <Hero />
       <Partners />
