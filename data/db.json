@@ -34,6 +34,13 @@
       "email": "ram@gmail.com",
       "password": "$2b$10$ka9ORman.54m7ktDs6Yt/OUrIdtTWoQrIe6eqgVUXCim.YSW3jOBC",
       "createdAt": "2026-02-08T08:15:51.671Z"
+    },
+    {
+      "id": "gTERNmQBo-_dvN4vqZzOk",
+      "name": "Ram Hari",
+      "email": "ramhari@gmail.com",
+      "password": "$2b$10$X1dSTFm9JuXpgrdipJmR0uUYkpSE7z8/IS.9tu3ONt7Y3or7vUYhy",
+      "createdAt": "2026-02-16T05:44:32.657Z"
     }
   ]
 }
